@@ -9,15 +9,6 @@
     <File Path="README.md" />
     <File Path="README.source.md" />
   </Folder>
-  <Folder Name="/Publish/">
-    <File Path="makeNuget.cmd" />
-  </Folder>
-  <Folder Name="/samples/">
-    <Project Path="samples/RazorLight.Samples/Samples.EntityFrameworkProject.csproj" />
-  </Folder>
-  <Folder Name="/sandbox/">
-    <Project Path="sandbox/RazorLight.Sandbox/RazorLight.Sandbox.csproj" />
-  </Folder>
   <Folder Name="/Solution Items/">
     <File Path=".editorconfig" />
   </Folder>
