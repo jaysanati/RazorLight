@@ -15,6 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <SourceRoot Include="$(NuGetPackageRoot)" Condition="'$(NuGetPackageRoot)' != ''" />
+    <SourceRoot Include="$(NuGetPackageRoot)\" Condition="'$(NuGetPackageRoot)' != ''" />
   </ItemGroup>
 </Project>

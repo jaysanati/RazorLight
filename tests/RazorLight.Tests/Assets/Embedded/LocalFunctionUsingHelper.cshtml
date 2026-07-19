@@ -1,9 +1,0 @@
-﻿@using Microsoft.AspNetCore.Html
-
-@inherits RazorLight.TemplatePage<object>
-
-@{
-	IHtmlContent b(string text) => HelperFunction(@<strong>@text</strong>);
-}
-
-@b("LocalFunctionUsingHelper")

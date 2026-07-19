@@ -1,17 +1,17 @@
 ﻿using System;
+using System.Buffers;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Diagnostics;
+using System.IO;
+using System.Text.Encodings.Web;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Html;
-using System.IO;
-using System.ComponentModel;
-using System.Text.Encodings.Web;
-using System.Diagnostics;
-using RazorLight.Internal;
 using Microsoft.AspNetCore.Razor.Runtime.TagHelpers;
 using Microsoft.AspNetCore.Razor.TagHelpers;
-using RazorLight.TagHelpers;
-using System.Buffers;
+using RazorLight.Internal;
 using RazorLight.Internal.Buffering;
+using RazorLight.TagHelpers;
 using RazorLight.Text;
 
 namespace RazorLight
@@ -672,8 +672,7 @@ namespace RazorLight
 		private bool IsBoolTrueWithEmptyPrefixValue(string prefix, object value)
 		{
 			// If the value is just the bool 'true', use the attribute name as the value.
-			return string.IsNullOrEmpty(prefix) &&
-				(value is bool && (bool)value);
+			return string.IsNullOrEmpty(prefix) && value is bool && (bool)value;
 		}
 
 		#endregion
