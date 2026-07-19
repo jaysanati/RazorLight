@@ -1,0 +1,76 @@
+@using RazorLight.Tests.ViewModels
+
+@model LibraryViewModel
+
+<h1>Library</h1>
+
+<div>
+    <strong>Name:</strong> @Model.Name
+</div>
+
+<div>
+    <strong>Librarian:</strong> @Model.Librarian.Name
+    <ul>
+        @foreach (var phone in Model.Librarian.Phones)
+        {
+            <li>@phone</li>
+        }
+    </ul>
+</div>
+
+<h2>Authors</h2>
+<table border="1" cellpadding="5" cellspacing="0">
+    <thead>
+        <tr>
+            <th>Author Name</th>
+            <th>Books</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < Model.Authors.Length; i++)
+        {
+            var author = Model.Authors[i];
+            <tr>
+                <td>@author.Name</td>
+                <td>
+                    <table border="1" cellpadding="5" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Published</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var book in author.Books)
+                            {
+                                <tr>
+                                    <td>@book.Title</td>
+                                    <td>@book.Published.ToString("yyyy-MM-dd")</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h2>All Books</h2>
+<table border="1" cellpadding="5" cellspacing="0">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Published</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model.Books)
+        {
+            <tr>
+                <td>@book.Title</td>
+                <td>@book.Published.ToString("yyyy-MM-dd")</td>
+            </tr>
+        }
+    </tbody>
+</table>
